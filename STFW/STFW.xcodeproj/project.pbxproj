@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		67F6AE2F246D3F6500423FA7 /* STFWShell */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 67F6AE32246D3F6500423FA7 /* Build configuration list for PBXAggregateTarget "STFWShell" */;
+			buildPhases = (
+				67F6AE33246D3F6A00423FA7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = STFWShell;
+			productName = STFWShell;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		67F6ADFD246D2F6700423FA7 /* STFW.h in Headers */ = {isa = PBXBuildFile; fileRef = 67F6ADFB246D2F6700423FA7 /* STFW.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67F6AE04246D2F8D00423FA7 /* STView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6AE03246D2F8D00423FA7 /* STView.swift */; };
@@ -100,6 +114,9 @@
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
 					};
+					67F6AE2F246D3F6500423FA7 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 67F6ADF2246D2F6700423FA7 /* Build configuration list for PBXProject "STFW" */;
@@ -116,6 +133,7 @@
 			projectRoot = "";
 			targets = (
 				67F6ADF7246D2F6700423FA7 /* STFW */,
+				67F6AE2F246D3F6500423FA7 /* STFWShell */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +147,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67F6AE33246D3F6A00423FA7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nTARGET_NAME=${PROJECT_NAME}\nif [[ $1 ]]\nthen\nTARGET_NAME=$1\nfi\n\nIphonesimulator_SDK=\"${SRCROOT}/iphonesimulator/\"\nIphoneos_SDK=\"${SRCROOT}/iphoneos/\"\nSDK=\"${SRCROOT}/Product/\"\n\nmkdir -p \"${Iphonesimulator_SDK}\"\nmkdir -p \"${Iphoneos_SDK}\"\nmkdir -p \"${SDK}\"\n\nrm -rf \"${Iphonesimulator_SDK}/${TARGET_NAME}.framework\"\nrm -rf \"${Iphoneos_SDK}/${TARGET_NAME}.framework\"\nrm -rf \"${SDK}/${TARGET_NAME}.framework\"\n\nxcodebuild -target \"${TARGET_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${TARGET_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${TARGET_NAME}.framework\" \"${Iphoneos_SDK}\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${TARGET_NAME}.framework\" \"${Iphonesimulator_SDK}\"\n\ncp -R \"${Iphoneos_SDK}/${TARGET_NAME}.framework\" \"${SDK}\"\ncp -R \"${Iphonesimulator_SDK}/${TARGET_NAME}.framework/Modules/${TARGET_NAME}.swiftmodule\"  \"${SDK}/${TARGET_NAME}.framework/Modules\"\n\nlipo -create -output \"${SDK}/${TARGET_NAME}.framework/${TARGET_NAME}\" \"${Iphoneos_SDK}/${TARGET_NAME}.framework/${TARGET_NAME}\" \"${Iphonesimulator_SDK}/${TARGET_NAME}.framework/${TARGET_NAME}\"\n\nif [ -d \"${SRCROOT}/build\" ]\nthen\nrm -rf \"${SRCROOT}/build\"\nfi\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos\"\nrm -rf \"${Iphonesimulator_SDK}\" \"${Iphoneos_SDK}\"\n\nopen \"${SDK}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		67F6ADF4246D2F6700423FA7 /* Sources */ = {
@@ -319,6 +357,24 @@
 			};
 			name = Release;
 		};
+		67F6AE30246D3F6500423FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z25J3BA353;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		67F6AE31246D3F6500423FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z25J3BA353;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +392,15 @@
 			buildConfigurations = (
 				67F6AE01246D2F6700423FA7 /* Debug */,
 				67F6AE02246D2F6700423FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67F6AE32246D3F6500423FA7 /* Build configuration list for PBXAggregateTarget "STFWShell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67F6AE30246D3F6500423FA7 /* Debug */,
+				67F6AE31246D3F6500423FA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
