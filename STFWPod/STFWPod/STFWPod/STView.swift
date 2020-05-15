@@ -7,21 +7,23 @@
 //
 
 import UIKit
-import STKitSwift
-open class STView: UIButton {
-    
+import SnapKit
+open class STView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .red
-        
-        addTarget(self, action: #selector(actionButton), for: .touchUpInside)
+        let label = UILabel()
+        label.text = "TEST"
+        label.backgroundColor = .red
+        addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.width.equalTo(100)
+            make.height.equalTo(40)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+        }
     }
     
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func actionButton(){
-        STAlertView.show(title: "title", message: "message", cancelTitle: "cancelTitle", otherTitle: "otherTitle")
     }
 }
