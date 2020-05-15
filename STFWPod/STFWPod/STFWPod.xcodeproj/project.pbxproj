@@ -3,26 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
+
+/* Begin PBXAggregateTarget section */
+		678809B8246E3826001075D9 /* STFWShell */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 678809B9246E3826001075D9 /* Build configuration list for PBXAggregateTarget "STFWShell" */;
+			buildPhases = (
+				678809BC246E3829001075D9 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = STFWShell;
+			productName = STFWShell;
+		};
+/* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		4227D6D23AA8E6A2397AE479 /* Pods_STFWPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01730FA55FD7C4E9FC118514 /* Pods_STFWPod.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6788097D246E2723001075D9 /* STFWPod.h in Headers */ = {isa = PBXBuildFile; fileRef = 6788097B246E2723001075D9 /* STFWPod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67880984246E27F7001075D9 /* STView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67880983246E27F7001075D9 /* STView.swift */; };
-		6788098C246E28B9001075D9 /* STFWPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6788098B246E28B9001075D9 /* STFWPodTests.swift */; };
-		6788098E246E28B9001075D9 /* STFWPod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67880978246E2723001075D9 /* STFWPod.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6788098F246E28B9001075D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6788096F246E2723001075D9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 67880977246E2723001075D9;
-			remoteInfo = STFWPod;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		01730FA55FD7C4E9FC118514 /* Pods_STFWPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STFWPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,7 +32,6 @@
 		6788097B246E2723001075D9 /* STFWPod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STFWPod.h; sourceTree = "<group>"; };
 		6788097C246E2723001075D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67880983246E27F7001075D9 /* STView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STView.swift; sourceTree = "<group>"; };
-		67880989246E28B9001075D9 /* STFWPodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STFWPodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6788098B246E28B9001075D9 /* STFWPodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STFWPodTests.swift; sourceTree = "<group>"; };
 		6788098D246E28B9001075D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEF3DE0FB96662CDEAA12CFE /* Pods-STFWPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STFWPod.debug.xcconfig"; path = "Target Support Files/Pods-STFWPod/Pods-STFWPod.debug.xcconfig"; sourceTree = "<group>"; };
@@ -43,14 +44,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4227D6D23AA8E6A2397AE479 /* Pods_STFWPod.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		67880986246E28B9001075D9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6788098E246E28B9001075D9 /* STFWPod.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				67880978246E2723001075D9 /* STFWPod.framework */,
-				67880989246E28B9001075D9 /* STFWPodTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,24 +138,6 @@
 			productReference = 67880978246E2723001075D9 /* STFWPod.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		67880988246E28B9001075D9 /* STFWPodTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 67880993246E28B9001075D9 /* Build configuration list for PBXNativeTarget "STFWPodTests" */;
-			buildPhases = (
-				67880985246E28B9001075D9 /* Sources */,
-				67880986246E28B9001075D9 /* Frameworks */,
-				67880987246E28B9001075D9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				67880990246E28B9001075D9 /* PBXTargetDependency */,
-			);
-			name = STFWPodTests;
-			productName = STFWPodTests;
-			productReference = 67880989246E28B9001075D9 /* STFWPodTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -178,7 +152,7 @@
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
 					};
-					67880988246E28B9001075D9 = {
+					678809B8246E3826001075D9 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -197,20 +171,13 @@
 			projectRoot = "";
 			targets = (
 				67880977246E2723001075D9 /* STFWPod */,
-				67880988246E28B9001075D9 /* STFWPodTests */,
+				678809B8246E3826001075D9 /* STFWShell */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		67880976246E2723001075D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		67880987246E28B9001075D9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -242,6 +209,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		678809BC246E3829001075D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nTARGET_NAME=${PROJECT_NAME}\nif [[ $1 ]]\nthen\nTARGET_NAME=$1\nfi\n\nIphonesimulator_SDK=\"${SRCROOT}/iphonesimulator/\"\nIphoneos_SDK=\"${SRCROOT}/iphoneos/\"\nSDK=\"${SRCROOT}/Product/\"\n\nmkdir -p \"${Iphonesimulator_SDK}\"\nmkdir -p \"${Iphoneos_SDK}\"\nmkdir -p \"${SDK}\"\n\nrm -rf \"${Iphonesimulator_SDK}/${TARGET_NAME}.framework\"\nrm -rf \"${Iphoneos_SDK}/${TARGET_NAME}.framework\"\nrm -rf \"${SDK}/${TARGET_NAME}.framework\"\n\n\nxcodebuild -workspace \"${TARGET_NAME}.xcworkspace\" -scheme \"${TARGET_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -workspace \"${TARGET_NAME}.xcworkspace\" -scheme \"${TARGET_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build -UseModernBuildSystem=NO\n\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${TARGET_NAME}.framework\" \"${Iphoneos_SDK}\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${TARGET_NAME}.framework\" \"${Iphonesimulator_SDK}\"\n\ncp -R \"${Iphoneos_SDK}/${TARGET_NAME}.framework\" \"${SDK}\"\ncp -R \"${Iphonesimulator_SDK}/${TARGET_NAME}.framework/Modules/${TARGET_NAME}.swiftmodule\"  \"${SDK}/${TARGET_NAME}.framework/Modules\"\n\n#rm -rf \"${SDK}/${TARGET_NAME}.framework/Headers/${TARGET_NAME}-Swift.h\"\n#cat \"${Iphonesimulator_SDK}/${TARGET_NAME}.framework/Headers/${TARGET_NAME}-Swift.h\" \"${Iphoneos_SDK}/${TARGET_NAME}.framework/Headers/${TARGET_NAME}-Swift.h\" >>   \"${SDK}/${TARGET_NAME}.framework/Headers/${TARGET_NAME}-Swift.h\"\n\nlipo -create -output \"${SDK}/${TARGET_NAME}.framework/${TARGET_NAME}\" \"${Iphoneos_SDK}/${TARGET_NAME}.framework/${TARGET_NAME}\" \"${Iphonesimulator_SDK}/${TARGET_NAME}.framework/${TARGET_NAME}\"\n\nif [ -d \"${SRCROOT}/build\" ]\nthen\nrm -rf \"${SRCROOT}/build\"\nfi\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos\"\nrm -rf \"${Iphonesimulator_SDK}\" \"${Iphoneos_SDK}\"\n\nopen \"${SDK}\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -253,24 +237,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67880985246E28B9001075D9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6788098C246E28B9001075D9 /* STFWPodTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		67880990246E28B9001075D9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 67880977246E2723001075D9 /* STFWPod */;
-			targetProxy = 6788098F246E28B9001075D9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6788097E246E2723001075D9 /* Debug */ = {
@@ -327,7 +294,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -384,6 +351,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -413,7 +381,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = st.STFWPod;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -454,41 +422,21 @@
 			};
 			name = Release;
 		};
-		67880991246E28B9001075D9 /* Debug */ = {
+		678809BA246E3826001075D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z25J3BA353;
-				INFOPLIST_FILE = STFWPodTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = st.STFWPodTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		67880992246E28B9001075D9 /* Release */ = {
+		678809BB246E3826001075D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z25J3BA353;
-				INFOPLIST_FILE = STFWPodTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = st.STFWPodTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -513,11 +461,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67880993246E28B9001075D9 /* Build configuration list for PBXNativeTarget "STFWPodTests" */ = {
+		678809B9246E3826001075D9 /* Build configuration list for PBXAggregateTarget "STFWShell" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67880991246E28B9001075D9 /* Debug */,
-				67880992246E28B9001075D9 /* Release */,
+				678809BA246E3826001075D9 /* Debug */,
+				678809BB246E3826001075D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
